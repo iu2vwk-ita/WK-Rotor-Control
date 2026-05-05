@@ -1,0 +1,5 @@
+pywebview>=6.2
+pyinstaller>=6.0
+pythonnet>=3.1.0rc0
+pymupdf
+Pillow
