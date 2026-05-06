@@ -368,11 +368,20 @@ a:hover{color:var(--amber)}
   background:radial-gradient(ellipse at 50% 50%,rgba(255,179,0,0.04) 0%,transparent 60%);
 }
 
+.download-grid{
+  display:flex;
+  gap:16px;
+  justify-content:center;
+  flex-wrap:wrap;
+  margin-bottom:8px;
+}
+
 .btn-download{
-  display:inline-block;
-  padding:16px 44px;
+  display:inline-flex;
+  align-items:center;
+  padding:16px 36px;
   font-family:var(--font-display);
-  font-size:16px;
+  font-size:15px;
   font-weight:700;
   text-transform:uppercase;
   letter-spacing:2px;
@@ -391,12 +400,24 @@ a:hover{color:var(--amber)}
 }
 .btn-download:active{transform:translateY(0)}
 
-.btn-download::after{
-  content:'↓';
-  margin-left:8px;
-  font-family:var(--font-mono);
-  font-size:18px;
+.btn-mac{
+  background:linear-gradient(135deg,#636e7b,#4a5360);
+  box-shadow:0 4px 24px rgba(99,110,123,0.25),0 0 0 1px rgba(99,110,123,0.2);
 }
+.btn-mac:hover{
+  box-shadow:0 8px 36px rgba(99,110,123,0.4),0 0 0 1px rgba(99,110,123,0.35);
+}
+
+.btn-ext{
+  font-family:var(--font-mono);
+  font-size:11px;
+  opacity:.6;
+  margin-left:8px;
+  letter-spacing:0;
+  text-transform:none;
+}
+
+.btn-download::after{display:none}
 
 .cta-reqs{
   margin-top:20px;
@@ -589,15 +610,27 @@ a:hover{color:var(--amber)}
     <h2 class="section-heading">Ready to Rotate</h2>
     <div class="section-divider" style="margin-left:auto;margin-right:auto"></div>
 
-    <a class="btn-download" href="./WKRotorControl.exe" download>
-      Download for Windows
-    </a>
+    <div class="download-grid">
+      <a class="btn-download btn-win" href="https://github.com/iu2vwk-ita/WK-Rotor-Control/releases/latest/download/WKRotorControl.exe">
+        Download for Windows
+        <span class="btn-ext">.exe</span>
+      </a>
+      <a class="btn-download btn-mac" href="https://github.com/iu2vwk-ita/WK-Rotor-Control/releases/latest/download/WKRotorControl-macOS.zip">
+        Download for macOS
+        <span class="btn-ext">.zip</span>
+      </a>
+    </div>
 
     <p class="cta-reqs">
-      <span>System requirements:</span> Windows 10 or 11 &middot; Edge WebView2 Runtime
+      <span>System requirements &mdash; Windows:</span> Windows 10 / 11 &middot; Edge WebView2 Runtime
+      &nbsp;|&nbsp;
+      <span>macOS:</span> macOS 12+ &middot; built-in WebKit
     </p>
     <p class="cta-note">
-      WebView2 is included with updated Windows 10/11 systems. No additional install needed.
+      Windows WebView2 is pre-installed on updated systems. macOS app includes pyserial bridge for USB rotor communication.
+    </p>
+    <p class="cta-note" style="margin-top:6px">
+      <a href="https://github.com/iu2vwk-ita/WK-Rotor-Control/releases">View all releases on GitHub</a>
     </p>
   </div>
 </section>
