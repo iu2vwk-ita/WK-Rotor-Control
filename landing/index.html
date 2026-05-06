@@ -555,33 +555,33 @@ a:hover{color:var(--amber)}
 
       <article class="feature-card">
         <div class="fc-icon" aria-hidden="true"><div class="ic-map"></div></div>
-        <h3 class="fc-title">Your QTH at the center of the world</h3>
+        <h3 class="fc-title">Map centered on your station, not somewhere generic</h3>
         <p class="fc-desc">
-          Drop in your Maidenhead locator and the app pulls an azimuthal projection map straight from NS6T, centered on your station. No fiddling with PDF software, it converts to PNG by itself and overlays it under the compass.
+          Type your Maidenhead grid locator (like <code translate="no">JN61fv</code>) and hit generate. The app sends it to NS6T, which builds an azimuthal projection map with your QTH exactly at the center. No accounts, no browser tabs, no saving PDFs to disk. The PDF comes back, gets converted to PNG behind the scenes, and drops right under the compass overlay. Change locator, regenerate, done. You can also drag-and-drop your own map image or a PDF straight onto the compass if you already have one.
         </p>
       </article>
 
       <article class="feature-card">
         <div class="fc-icon" aria-hidden="true"><div class="ic-compass"></div></div>
-        <h3 class="fc-title">See where you're actually pointing</h3>
+        <h3 class="fc-title">Compass that moves with the rotor, not with a delay</h3>
         <p class="fc-desc">
-          The compass needle moves in real time as the rotor turns. Target heading on top, current position below. It just works, the way a rotor controller should, without making you read a manual first.
+          The needle tracks the rotor in real time. Target heading displayed above the compass, live azimuth readout below. The canvas redraws at 60 fps so the movement is smooth, no jitter. Presets for 0, 45, 90, 135, 180, 225, 270, and 315 degrees get you to common headings with one click. Fine-tune with +5/+10 or -5/-10 step buttons. Keyboard shortcuts too: Enter to go, Space to stop. If you've got a map loaded, the needle sweeps across real geography, not just numbers on a dial.
         </p>
       </article>
 
       <article class="feature-card">
         <div class="fc-icon" aria-hidden="true"><div class="ic-serial"></div></div>
-        <h3 class="fc-title">Talks GS-232, the way Yaesu intended</h3>
+        <h3 class="fc-title">GS-232 straight from the box, no middleware</h3>
         <p class="fc-desc">
-          Plug your G-600 (or any GS-232 compatible rotor) into USB and the app handles the rest. Windows uses the browser's serial stack, macOS goes through a thin Python bridge. Same commands, same feel.
+          Tested against a real Yaesu G-600. The app speaks standard GS-232 commands: <code translate="no">M</code> to move, <code translate="no">S</code> to stop, reads back <code translate="no">+0140</code>-style heading replies. On Windows the browser handles the serial port natively through the Web Serial API, no drivers to install. On macOS, where browsers lack serial access, a thin Python bridge steps in automatically using pyserial. Same interface, same presets, same protocol. Baud rate configurable from 1200 to 38400. The COM/device dropdown populates from what your OS actually sees connected.
         </p>
       </article>
 
       <article class="feature-card">
         <div class="fc-icon" aria-hidden="true"><div class="ic-sim"></div></div>
-        <h3 class="fc-title">Try before you wire</h3>
+        <h3 class="fc-title">Full simulator, no hardware required</h3>
         <p class="fc-desc">
-          No rotor connected? The simulation mode spins a virtual antenna so you can test headings, presets, and the map without touching a cable. Zero configuration, starts the moment you open the app.
+          Before you even plug in the rotor, the simulation mode lets you walk through every feature. The virtual antenna turns at a realistic speed (configurable in the code), the compass follows, the heading readouts update. Type a target, hit go, watch it rotate. Good for testing the map generator, trying presets, or just seeing what the app looks like. Toggle power on and off at any time. The simulator runs on a 50 ms timer, no external dependencies, starts instantly when you open the app.
         </p>
       </article>
 
